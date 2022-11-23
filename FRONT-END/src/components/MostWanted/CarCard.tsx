@@ -6,6 +6,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { orange } from "@mui/material/colors";
+import { ColorButton } from "../../utils/Utilities";
 
 const CarCard = ({ car }: any) => {
     return (
@@ -23,10 +24,12 @@ const CarCard = ({ car }: any) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" variant="contained">
-                    Share
+                <ColorButton size="small" variant="contained">
+                    share
+                </ColorButton>
+                <Button size="small" sx={{ color: orange[500] }}>
+                    Learn More
                 </Button>
-                <Button size="small">Learn More</Button>
             </CardActions>
         </Card>
     );

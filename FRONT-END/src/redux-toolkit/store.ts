@@ -1,12 +1,10 @@
 import { Action, configureStore, ThunkAction } from "@reduxjs/toolkit";
 
-import formsReducer from "./OrderFormSlice";
-import allcars from './CarSlice'
+import formsReducer from "./OrderForm";
 
 export const store = configureStore({
     reducer: {
         orderform: formsReducer,
-        cars:allcars
     },
 });
 

@@ -13,8 +13,11 @@ import MenuItem from "@mui/material/MenuItem";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { ColorButton, pages, settings } from "../../utils/Utilities";
+import { useNavigate } from "react-router-dom";
 
 const Navigation = () => {
+    let navigate = useNavigate();
+
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
     const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
 
@@ -37,7 +40,12 @@ const Navigation = () => {
         <AppBar position="static" style={{ background: "#121212" }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <IconButton sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}>
+                    <IconButton
+                        onClick={() => {
+                            navigate("/");
+                        }}
+                        sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
+                    >
                         <svg width="41" height="34" viewBox="0 0 40 35" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M40.9264 16.503C40.9264 12.1262 39.2418 7.92852 36.2433 4.83361C33.2447 1.73871 29.1778 5.73957e-07 24.9372 0C20.6966 -5.73956e-07 16.6297 1.73871 13.6311 4.83361C10.6326 7.92852 8.94797 12.1262 8.94797 16.503H13.9447C15.6004 16.503 16.8917 15.0709 17.4982 13.4806C17.8964 12.4366 18.5006 11.4771 19.2841 10.6683C20.7834 9.12084 22.8169 8.25149 24.9372 8.25149C27.0575 8.25149 29.091 9.12084 30.5903 10.6683C32.0896 12.2157 32.9318 14.3146 32.9318 16.503H40.9264Z"
@@ -158,10 +166,28 @@ const Navigation = () => {
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
-                        <ColorButton sx={{ display: { xs: "none", md: "inline" } }} size="small" variant="contained">
+                        <ColorButton
+                            sx={{ display: { xs: "none", md: "inline" } }}
+                            size="small"
+                            variant="contained"
+                            onClick={() => {
+                                navigate("/signup");
+                            }}
+                        >
                             sign up
                         </ColorButton>
-                        <ShoppingCartIcon sx={{ display: { xs: "none", md: "inline" }, mr: 2, ml: 5 }} fontSize="large"></ShoppingCartIcon>
+                        <Tooltip title="Open cart">
+                            <IconButton
+                                onClick={() => {
+                                    navigate("/cart");
+                                }}
+                            >
+                                <ShoppingCartIcon
+                                    sx={{ display: { xs: "none", md: "inline" }, mr: 2, ml: 5, color: "white" }}
+                                    fontSize="large"
+                                ></ShoppingCartIcon>
+                            </IconButton>
+                        </Tooltip>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <AccountCircleIcon sx={{ color: "white" }} fontSize="large" />
