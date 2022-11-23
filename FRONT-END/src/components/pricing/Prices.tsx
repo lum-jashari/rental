@@ -53,7 +53,7 @@ function PricingContent() {
                     align="center"
                     color="text.primary"
                     gutterBottom
-                    sx={{ fontFamily: "'Space Grotesk', sans-serif;", fontWeight: 700, letterSpacing: ".1rem" }}
+                    sx={{ fontFamily: "Roboto, sans-serif;", fontWeight: 700, letterSpacing: ".1rem" }}
                 >
                     PRICING
                 </Typography>
@@ -101,7 +101,6 @@ function PricingContent() {
                                             €{tier.price}
                                         </Typography>
                                         <Typography variant="h6" color="text.secondary" sx={{ fontFamily: "'Space Grotesk', sans-serif;" }}>
-                                            {/* {tier.price==='199.99'?'/w':'/d'} */}
                                             {tier.price === "34.99" ? "/d" : tier.price === "199.99" ? "/w" : tier.price === "569.99" ? "/m" : ""}
                                         </Typography>
                                     </Box>

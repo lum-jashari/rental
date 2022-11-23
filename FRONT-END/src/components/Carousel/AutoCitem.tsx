@@ -2,18 +2,6 @@ import Carousel from "react-bootstrap/Carousel";
 
 export default function AutoCitem() {
     return (
-        //      <Carousel.Item interval={1000}>
-        //     <img
-        //       className="d-block w-100"
-        //       src={props.src}
-        //       alt="Slide Image"
-        //     />
-        //     <Carousel.Caption>
-        //       <h3>{props.ImageTitle}</h3>
-        //       <p>{props.ImagePara}</p>
-        //     </Carousel.Caption>
-        //   </Carousel.Item>
-
         <Carousel.Item interval={1000}>
             <img
                 className="d-block w-100"
